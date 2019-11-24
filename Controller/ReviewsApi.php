@@ -12,7 +12,7 @@ class ReviewsApi extends Controller {
 		parent::__construct($options);
         $this->reviews = new ReviewsEndpoint(
 			'https://api.reviews.io/',
-			$this->app['config']['reviews-io']['store']
+			$this->app['config']['reviews-io']['store'],
 			$this->app['config']['reviews-io']['api_key']
 		);
 	}
@@ -27,8 +27,6 @@ class ReviewsApi extends Controller {
 	}
 
 	public function product($sku) {
-
-		return $sku;
 
 		if (empty($sku)) {
 			return ['error' => 'You must provide a product sku.'];
