@@ -22,7 +22,7 @@ class ReviewsApi extends Controller {
 		$res = $this->reviews->query('product/reviews/all');
 
 		return $this->reviews->renderResponse($res, function($res) {
-			return ['reviews' => $res];
+			return ['reviews' => $res->reviews];
 		});
 	}
 
@@ -36,7 +36,7 @@ class ReviewsApi extends Controller {
 		]);
 
 		return $this->reviews->renderResponse($res, function($res) {
-			return ['reviews' => $res];
+			return ['reviews' => $res->reviews];
 		});
 	}
 
