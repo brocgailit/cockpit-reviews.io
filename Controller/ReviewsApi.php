@@ -27,6 +27,9 @@ class ReviewsApi extends Controller {
 	}
 
 	public function product($sku) {
+
+		return $sku;
+
 		if (empty($sku)) {
 			return ['error' => 'You must provide a product sku.'];
 		}
